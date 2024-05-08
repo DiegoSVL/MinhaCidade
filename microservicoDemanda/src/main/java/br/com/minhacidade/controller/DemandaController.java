@@ -1,7 +1,7 @@
-package com.example.minhacidade.controller;
+package br.com.minhacidade.controller;
 
-import com.example.minhacidade.model.Demanda;
-import com.example.minhacidade.service.DemandaService;
+import br.com.minhacidade.service.DemandaService;
+import br.com.minhacidade.model.Demanda;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

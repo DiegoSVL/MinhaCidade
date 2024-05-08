@@ -1,4 +1,4 @@
-package com.example.minhacidade;
+package br.com.minhacidade;
 
 import org.springframework.boot.test.context.SpringBootTest;
 

@@ -1,4 +1,4 @@
-package com.example.minhacidade.model;
+package br.com.minhacidade.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -14,10 +14,11 @@ import lombok.NoArgsConstructor;
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
-public class Demanda {
+public class Endereco {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private String descricao;
-    //private Endereco endereco;
+    private String logradouro;
+    private String numero;
+    private String bairro;
 }

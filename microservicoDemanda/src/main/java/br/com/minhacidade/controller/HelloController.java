@@ -1,4 +1,4 @@
-package com.example.minhacidade.controller;
+package br.com.minhacidade.controller;
 
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.PathVariable;

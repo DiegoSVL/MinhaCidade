@@ -1,7 +1,7 @@
-package com.example.minhacidade.service;
+package br.com.minhacidade.service;
 
-import com.example.minhacidade.model.Demanda;
-import com.example.minhacidade.repository.DemandaRepository;
+import br.com.minhacidade.model.Demanda;
+import br.com.minhacidade.repository.DemandaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
