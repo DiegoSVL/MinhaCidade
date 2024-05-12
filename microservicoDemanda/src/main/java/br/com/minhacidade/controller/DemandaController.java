@@ -24,11 +24,9 @@ public class DemandaController {
     }
 
     @GetMapping("/demandas")
-    public ResponseEntity<String> list() {
+    public ResponseEntity<List<Demanda>> list() {
         List<Demanda> demandas = service.findAll();
-        StringBuilder retornoSB = new StringBuilder();
-        demandas.stream().forEach(a -> retornoSB.append(a.toString()).append("\r\n"));
-        return ResponseEntity.status(HttpStatus.OK).body(retornoSB.toString());
+        return ResponseEntity.status(HttpStatus.OK).body(demandas);
     }
 
     @PostMapping("/demandas")
