@@ -16,12 +16,14 @@ COPY src ./src
 RUN mvn clean install
 
 # Segundo estágio: Executar o JAR gerado
-FROM openjdk:17-slim
-
+FROM tomcat:10.1.12-jre17
+#MAINTAINER instruction is used to specify about the author who creates the image.
+MAINTAINER Madan
+#COPY instruction is used to copy files and directories to the destination within the  filesystem of Docker image.
 WORKDIR /app
 
 # Copiar o JAR gerado do primeiro estágio
-COPY --from=builder /app/target/microservicoDemanda-0.0.1-SNAPSHOT.jar .
-
-# Executar o JAR
-CMD ["java", "-jar", "microservicoDemanda-0.0.1-SNAPSHOT.jar"]
+COPY --from=builder /app/target/moduloweb-0.0.1-SNAPSHOT.war /usr/local/tomcat/webapps/
+#CMD instruction is used to set a command to be executed when running a container. There must be only one CMD in a
+# Dockerfile. If more than one CMD is found then only last CMD is effective.
+CMD ["catalina.sh", "run"]
