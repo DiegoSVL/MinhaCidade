@@ -1,5 +1,5 @@
 # Primeiro estágio: Construir a aplicação com Maven e Java 20
-FROM maven:3.8.4-openjdk-20 AS builder
+FROM 3.8.7-openjdk-18-slim AS builder
 
 WORKDIR /app
 
@@ -16,7 +16,7 @@ COPY src ./src
 RUN mvn clean install
 
 # Segundo estágio: Executar o JAR gerado
-FROM openjdk:20-slim
+FROM openjdk:18-slim
 
 WORKDIR /app
 
