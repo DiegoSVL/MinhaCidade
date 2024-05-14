@@ -1,6 +1,7 @@
 package br.com.minhacidade.service;
 
 import br.com.minhacidade.model.Demanda;
+import br.com.minhacidade.model.enums.Situacao;
 import br.com.minhacidade.repository.DemandaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -19,6 +20,11 @@ public class DemandaService {
 
     public List<Demanda> findAll() {
         return repository.findAll();
+    }
+
+    public Demanda create(Demanda demanda) {
+        demanda.setSituacao(Situacao.AGUARDANDO_APROVACAO);
+        return repository.save(demanda);
     }
 
     public Demanda save(Demanda demanda) {
