@@ -30,8 +30,8 @@ public class DemandaController {
     }
 
     @PostMapping("/demandas")
-    public ResponseEntity<Demanda> save(@RequestBody Demanda demanda) {
-        return ResponseEntity.status(HttpStatus.NO_CONTENT).body(service.save(demanda));
+    public ResponseEntity<Demanda> create(@RequestBody Demanda demanda) {
+        return ResponseEntity.status(HttpStatus.NO_CONTENT).body(service.create(demanda));
     }
 
     @PutMapping("/demandas/{id}")
