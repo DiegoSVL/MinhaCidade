@@ -13,7 +13,7 @@ public class DataBaseConfiguration {
 
     @Autowired
     DemandaService service;
-    @EventListener(ApplicationReadyEvent.class)
+    //@EventListener(ApplicationReadyEvent.class)
     public void doSomethingAfterStartup() {
         service.create(Demanda.builder().titulo("Buraco na rua").descricao("Tem um buraco no meio da rua que pode causar um acidente grave").endereco(Endereco.builder().bairro("Ipanema").logradouro("Rua Vinicius de Moraes").numero("110").build()).build());
         service.create(Demanda.builder().titulo("Falta de iluminação").descricao("As luzes dos postes estão quebradas deixando o local mal iluminado e perigoso").endereco(Endereco.builder().bairro("Leblon").logradouro("Avenida Delfim Moreira").numero("1234").build()).build());
