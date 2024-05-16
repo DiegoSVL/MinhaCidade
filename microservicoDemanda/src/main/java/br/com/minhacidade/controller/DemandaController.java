@@ -34,7 +34,7 @@ public class DemandaController {
         log.info("GET : /demandas");
         long initialMillis = System.currentTimeMillis();
         List<Demanda> demandas = service.findAll();
-        log.info("Demandas listadas em {}ms", id, getTimeMillis(initialMillis));
+        log.info("Demandas listadas em {}ms", getTimeMillis(initialMillis));
         log.info("GET : /demandas Response: {}", demandas);
         return ResponseEntity.status(HttpStatus.OK).body(demandas);
     }
