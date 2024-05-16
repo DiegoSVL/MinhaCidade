@@ -15,7 +15,7 @@ public class DataBaseConfiguration {
     DemandaService service;
     //@EventListener(ApplicationReadyEvent.class)
     public void doSomethingAfterStartup() {
-        service.create(Demanda.builder().titulo("Buraco na rua").descricao("Tem um buraco no meio da rua que pode causar um acidente grave").endereco(Endereco.builder().bairro("Ipanema").logradouro("Rua Vinicius de Moraes").numero("110").build()).build());
+        service.create(Demanda.builder().titulo("Buraco na rua").descricao("Tem um buraco no meio da rua que pode causar um acidente grave").endereco(Endereco.builder().bairro("Ipanema").logradouro("Rua Vinicius de Moraes").numero("100").build()).build());
         service.create(Demanda.builder().titulo("Falta de iluminação").descricao("As luzes dos postes estão quebradas deixando o local mal iluminado e perigoso").endereco(Endereco.builder().bairro("Leblon").logradouro("Avenida Delfim Moreira").numero("1234").build()).build());
         service.create(Demanda.builder().titulo("Vazamento de água").descricao("Há um vazamento de água na calçada que está desperdiçando recursos e causando alagamento").endereco(Endereco.builder().bairro("Barra da Tijuca").logradouro("Avenida das Américas").numero("2000").build()).build());
         service.create(Demanda.builder().titulo("Calçada danificada").descricao("A calçada está quebrada e representa um risco de tropeço para os pedestres").endereco(Endereco.builder().bairro("Botafogo").logradouro("Rua Voluntários da Pátria").numero("400").build()).build());
