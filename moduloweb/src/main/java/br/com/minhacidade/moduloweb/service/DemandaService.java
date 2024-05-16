@@ -14,7 +14,7 @@ public class DemandaService {
     public static final String BASE_PATH = "https://projeto-minha-cidade-60581.uk.r.appspot.com/demandas";
     @Autowired
     RestTemplate restTemplate;
-    public List<Demanda> getDemandas(String descricao) {
+    public List<Demanda> getDemandas() {
         return restTemplate.getForObject(BASE_PATH, List.class);
     }
 

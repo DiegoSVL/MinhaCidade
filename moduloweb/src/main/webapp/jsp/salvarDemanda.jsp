@@ -27,7 +27,7 @@
 	                <ul class="navbar-nav mr-auto">
 		                <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
 		             	<li class="nav-item"><a class="nav-link" href="/user/demandas">Listar problemas</a></li>
-		             	<li class="nav-item"><a class="nav-link" href="/user/preencherDemanda">Inserir Novo Problema</a></li>
+		             	<li class="nav-item active"><a class="nav-link" href="/user/preencherDemanda">Inserir Novo Problema</a></li>
 		             	<li class="nav-item">
 		             	    <c:url var="logoutUrl" value="/logout" />
                             <form action="${logoutUrl}" id="logout" method="post">
@@ -43,23 +43,35 @@
 	</header>
 
 	<div class="container">
-			<h1 class="display-6">${demanda.titulo}</h1>
+        <form:form method="post" modelAttribute="salvarDemandaForm">
+            <h1 class="display-6">Relatar Problema:</h1>
 
-			<p class="lead">${demanda.descricao}</p>
+            <hr class="my-4">
 
-			<hr class="my-4">
-                        <p><strong>Código: </strong> ${demanda.id}</p>
-                        <p><strong>Situação do Problema: </strong> ${demanda.situacao}</p>
-						<p><strong>Rua: </strong> ${demanda.endereco.logradouro}</p>
-            			<p><strong>Número: </strong> ${demanda.endereco.numero}</p>
-            			<p><strong>Bairro: </strong> ${demanda.endereco.bairro}</p>
+            <div class="form-group">
+                <label for="titulo"><strong>Título:</strong></label>
+                <input class="form-control" name="titulo">${titulo}</input>
+                <label for="descricao"><strong>Descricao:</strong></label>
+                <textarea class="form-control" name="descricao">${descricao}</textarea>
+                <label for="bairro"><strong>Bairro:</strong></label>
+                <input class="form-control" name="bairro">${bairro}</input>
+                <label for="logradouro"><strong>Logradouro:</strong></label>
+                <input class="form-control" name="logradouro">${logradouro}</input>
+                <label for="numero"><strong>Número:</strong></label>
+                <input class="form-control" name="numero">${numero}</input>
+            </div>
 
-			<hr class="my-4">
+            <hr class="my-4">
 
-			<div>
-				<a class="btn btn-primary" href="/user/demandas">Voltar</a>
-				<a class="btn btn-danger" href="/user/excluirDemanda/${demanda.id}" onclick="return confirm('Você deseja excluir essa demanda?')")>Excluir</a>
-			</div>
+            <div>
+
+                <button class="btn btn-primary" formaction="/user/salvarDemanda">Salvar</button>
+
+                <a class="btn btn-danger" data-toggle="collapse" href="/" role="button" aria-expanded="false" aria-controls="collapse">
+                    <span class="d-block d-sm-none">Cancelar</span><span class="d-none d-sm-block">cancelar</span>
+                </a>
+            </div>
+        </form:form>
 	</div>
 
 	<script src="/webjars/jquery/3.4.1/jquery.min.js"></script>

@@ -53,6 +53,20 @@ body {
   border-color: #66b6d2;
 }
 
+.btn-primary-ct {
+  color: #fff;
+  background-color: #3ba1c5;
+  border-color: #3ba1c5;
+  display: inline-block;
+}
+
+.btn-primary-ct:hover {
+  color: #fff;
+  background-color: #66b6d2;
+  border-color: #66b6d2;
+  display: inline-block;
+}
+
 .btn-primary:focus, .btn-primary.focus {
   box-shadow: 0 0 0 0.2rem rgba(233, 245, 249, 1);
 }

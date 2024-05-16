@@ -1,5 +1,6 @@
-package br.com.minhacidade.moduloweb.model;
+package br.com.minhacidade.moduloweb.webform;
 
+import br.com.minhacidade.moduloweb.model.Endereco;
 import br.com.minhacidade.moduloweb.model.enums.Situacao;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -10,10 +11,10 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class Demanda {
-    private Long id;
+public class SalvarDemandaForm {
     private String titulo;
     private String descricao;
-    private Situacao situacao;
-    private Endereco endereco;
+    private String logradouro;
+    private String numero;
+    private String bairro;
 }

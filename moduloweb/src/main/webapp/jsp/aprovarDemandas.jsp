@@ -5,7 +5,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-	<title>Consultar Demandas</title>
+	<title>Aprovar Demandas</title>
 
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -26,8 +26,8 @@
 				<div class="collapse navbar-collapse wrapper" id="navbar-collapse">
 	                <ul class="navbar-nav mr-auto">
 		                <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
-		             	<li class="nav-item active"><a class="nav-link" href="/user/demandas">Listar problemas</a></li>
-		             	<li class="nav-item"><a class="nav-link" href="/user/preencherDemanda">Inserir Novo Problema</a></li>
+		             	<li class="nav-item active"><a class="nav-link" href="/admin/aprovarDemandas">Aprovar problemas</a></li>
+		             	<li class="nav-item"><a class="nav-link" href="/user/preencherDemanda">Finalizar problemas</a></li>
 		             	<li class="nav-item">
 		             	    <c:url var="logoutUrl" value="/logout" />
                             <form action="${logoutUrl}" id="logout" method="post">
@@ -43,7 +43,7 @@
 	</header>
 
 	<div class="container">
-		<h1 class="display-6">Lista de problemas</h1>
+		<h1 class="display-6">Problemas aguardando aprovação</h1>
 
 		<hr class="my-4">
 
@@ -52,7 +52,7 @@
 				<tr>
 					<th scope="col">Código</th>
 					<th class="d-none d-sm-block" scope="col">Título</th>
-					<th scope="col">Situação</th>
+					<th></th>
 					<th></th>
 					<th></th>
 				</tr>
@@ -99,10 +99,9 @@
 							</c:choose>
 						</td>
 
-						<td>${demanda.situacao}</td>
-
 						<td><a class="btn btn-outline-primary btn-sm" href="/user/detalharDemanda/${demanda.id}">Detalhar</a></td>
-						<td><a class="btn btn-outline-primary btn-sm" href="/user/excluirDemanda/${demanda.id}" onclick="return confirm('Você deseja excluir essa demanda?')">Excluir</a></td>
+						<td><a class="btn btn-outline-primary btn-sm" href="/user/detalharDemanda/${demanda.id}">Aprovar</a></td>
+						<td><a class="btn btn-outline-primary btn-sm" href="/user/excluirDemanda/${demanda.id}" onclick="return confirm('Você deseja excluir essa demanda?')">Cancelar</a></td>
 					</tr>
 				</c:forEach>
 			</tbody>

@@ -25,9 +25,8 @@
 
 				<div class="collapse navbar-collapse wrapper" id="navbar-collapse">
 	                <ul class="navbar-nav mr-auto">
-		                <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
-		             	<li class="nav-item"><a class="nav-link" href="/user/demandas">Listar problemas</a></li>
-		             	<li class="nav-item"><a class="nav-link" href="/user/preencherDemanda">Inserir Novo Problema</a></li>
+		             	<li class="nav-item"><a class="nav-link" href="/user/demandas">Problemas Relatados</a></li>
+		             	<li class="nav-item"><a class="nav-link" href="/user/preencherDemanda">Novo Problema</a></li>
 		             	<li class="nav-item">
 		             	    <c:url var="logoutUrl" value="/logout" />
                             <form action="${logoutUrl}" id="logout" method="post">
@@ -43,22 +42,16 @@
 	</header>
 
 	<div class="container">
-			<h1 class="display-6">${demanda.titulo}</h1>
-
-			<p class="lead">${demanda.descricao}</p>
-
-			<hr class="my-4">
-                        <p><strong>Código: </strong> ${demanda.id}</p>
-                        <p><strong>Situação do Problema: </strong> ${demanda.situacao}</p>
-						<p><strong>Rua: </strong> ${demanda.endereco.logradouro}</p>
-            			<p><strong>Número: </strong> ${demanda.endereco.numero}</p>
-            			<p><strong>Bairro: </strong> ${demanda.endereco.bairro}</p>
-
-			<hr class="my-4">
-
-			<div>
-				<a class="btn btn-primary" href="/user/demandas">Voltar</a>
-				<a class="btn btn-danger" href="/user/excluirDemanda/${demanda.id}" onclick="return confirm('Você deseja excluir essa demanda?')")>Excluir</a>
+			<div class="py-5">
+                <div class="container px-lg-5">
+                    <div class="p-4 p-lg-5 bg-light rounded-3 text-center">
+                        <div class="m-4 m-lg-5">
+                            <h1 class="display-5 fw-bold">Você pode fazer a diferença na sua cidade!</h1>
+                            <p class="fs-4">Sua colaboração é fundamental para que possamos construir uma cidade mais segura, limpa e organizada.</p>
+                            <a class="btn btn-primary btn-lg" href="/user/preencherDemanda">Reportar Problema</a>
+                        </div>
+                    </div>
+                </div>
 			</div>
 	</div>
 
