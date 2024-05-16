@@ -24,7 +24,8 @@ public class DemandaService {
 
     public Demanda create(Demanda demanda) {
         demanda.setSituacao(Situacao.AGUARDANDO_APROVACAO);
-        return repository.save(demanda);
+        var demandaSalva = repository.save(demanda);
+        return demandaSalva;
     }
 
     public Demanda save(Demanda demanda) {
